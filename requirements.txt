@@ -1,3 +1,4 @@
+pyTelegramBotAPI==4.14.1
 requests
 pandas
 numpy
