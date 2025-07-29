@@ -1,0 +1,25 @@
+# render.yaml
+services:
+  - type: web
+    name: crypto-signal-bot
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: "8136421090:AAFrb8RI6BQ2tH49YXX_5S32_W0yWfT04Cg"
+      - key: TELEGRAM_USER_ID
+        value: "570096331"
+      - key: SYMBOL
+        value: "SOLUSDT"
+      - key: INTERVAL
+        value: "15m"
+      - key: DATA_LIMIT
+        value: "100"
+      - key: ENTRY_FILE
+        value: "entry_exit.json"
+      - key: LOOP_INTERVAL
+        value: "900"
+      - key: ERROR_RETRY_DELAY
+        value: "60"
