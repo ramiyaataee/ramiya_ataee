@@ -1,0 +1,9 @@
+import os
+
+class Config:
+    TELEGRAM_BOT_TOKEN = os.getenv("8136421090:AAFrb8RI6BQ2tH49YXX_5S32_W0yWfT04Cg")
+    TELEGRAM_USER_ID = int(os.getenv("570096331"))
+    SYMBOL = "SOLUSDT"
+    INTERVAL = "15m"
+    DATA_LIMIT = 100
+    # بقیه پارامترهای ربات
