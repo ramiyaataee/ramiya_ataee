@@ -1,10 +1,7 @@
 import os
 import threading
-import logging
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from bot import main_bot_loop  # تابع اصلی اجرای ربات
-
-logging.basicConfig(level=logging.INFO)
+from bot import main  # تابع اصلی
 
 class HealthHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -19,10 +16,10 @@ def run_health_server(port):
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))
 
-    # اجرای سرور سلامت در thread جداگانه
+    # اجرای سرور سلامت در یک thread جدا
     thread = threading.Thread(target=run_health_server, args=(port,))
     thread.daemon = True
     thread.start()
 
-    # اجرای ربات (حلقه اصلی قیمت‌گیری و ارسال به تلگرام)
-    main_bot_loop()
+    # اجرای ربات
+    main()
