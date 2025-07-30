@@ -4,3 +4,5 @@ pandas
 numpy
 python-telegram-bot
 scikit-learn
+requests==2.32.4
+python-telegram-bot==22.3
